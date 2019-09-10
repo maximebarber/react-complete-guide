@@ -43,3 +43,18 @@ Go to http://localhost:3000/
 ```sh
 npm run build
 ```
+
+### Creating components
+
+[Components & JSX Cheat Sheet](https://github.com/maximebarber/react-complete-guide/blob/master/docs/components.pdf)
+
+### Understanding and using *props* and *state*
+
+* **state property** is only available if inside a class that *extends Component*; unless using react hooks
+* If state changes, it will re-render the DOM
+
+[Props and state](https://github.com/maximebarber/react-complete-guide/blob/master/docs/props-state.pdf)
+
+### Handling events
+
+[Supported events](https://reactjs.org/docs/events.html#supported-events)
