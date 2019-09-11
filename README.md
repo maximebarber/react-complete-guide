@@ -17,23 +17,23 @@
 2. Install create-react-app
 
 ```sh
-npm install -g create-react-app
+$ npm install -g create-react-app
 ```
 
 3. Create a new project
 
 ```sh
-create-react-app my-app
+$ create-react-app my-app
 ```
 
 4. Start development
 
 ```sh
-cd my-app/
+$ cd my-app/
 ```
 
 ```sh
-npm start
+$ npm start
 ```
 
 Go to http://localhost:3000/
@@ -41,7 +41,7 @@ Go to http://localhost:3000/
 5. Deploy to production
 
 ```sh
-npm run build
+$ npm run build
 ```
 
 ### Creating components
@@ -58,3 +58,10 @@ npm run build
 ### Handling events
 
 [Supported events](https://reactjs.org/docs/events.html#supported-events)
+
+### Hook state manipulation vs class state manipulation
+
+* [Hook version](https://github.com/maximebarber/react-complete-guide/blob/master/code/use-state-hook)
+* [Class version](https://github.com/maximebarber/react-complete-guide/blob/master/code/class-based)
+
+[Hook useState() learning card](https://github.com/maximebarber/react-complete-guide/blob/master/docs/usestate-learning-card.pdf)
