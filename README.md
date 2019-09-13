@@ -65,3 +65,18 @@ $ npm run build
 * [Class version](https://github.com/maximebarber/react-complete-guide/blob/master/code/class-based)
 
 [Hook useState() learning card](https://github.com/maximebarber/react-complete-guide/blob/master/docs/usestate-learning-card.pdf)
+
+## Lists and conditionals
+
+### JSX conditionals
+
+```js
+{
+    this.state.showPerson ?
+    <div>
+        <Person
+        name={this.state.persons[0].name}
+        age={this.state.persons[0].age} />
+    </div> : null
+}
+```
