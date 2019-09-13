@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Person from './Person/Person';
+import UserInput from './UserInput/UserInput';
+import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
   state = {
@@ -10,8 +12,23 @@ class App extends Component {
       { name: 'Manu', age: 29 },
       { name: 'Stephanie', age: 26 }
     ],
+    hives: [
+      {name: 'First class!'},
+      {name: 'Bee Gees'},
+      {name: 'Valérie'},
+    ],
     otherState: 'some other value'
   };
+
+  newUserInputHandler = (event) => {
+    this.setState({
+      hives: [
+        { name: event.target.value },
+        /* { name: 'Bee Gees' },
+        { name: 'Valérie' }, */
+      ]
+    })
+  }
 
   switchNameHandler = (newName) => {
     // console.log('Was clicked!');
@@ -50,6 +67,13 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
+        <h3>Exercice 1</h3>
+        <UserInput 
+          value={this.state.hives[0].name}
+          changed={this.newUserInputHandler}
+        />
+        <UserOutput name={this.state.hives[0].name}/>
+        <h3>Lesson</h3>
         <button 
           style={style}
           onClick={() => this.switchNameHandler('Maximilian')}>Switch Name
