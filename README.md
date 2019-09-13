@@ -70,17 +70,65 @@ $ npm run build
 
 ### JSX conditionals
 
+/!\ This is not the most efficient solution
+
 ```js
 state = {
     showPerson: false
 }
 
+togglePersonsHandler = () => {
+    const doesShow = this.state.showPersons
+    this.setState({showPersons: !doesShow})
+}
+
+// Inside render method
 {
     this.state.showPerson ?
     <div>
         <Person
-        name={this.state.persons[0].name}
-        age={this.state.persons[0].age} />
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age} />
     </div> : null
 }
 ```
+
+### JS conditionals
+
+/!\ This is the recommended solution
+
+```js
+    state = {
+        showPerson: false
+    }
+
+    togglePersonsHandler = () => {
+        const doesShow = this.state.showPersons
+        this.setState({showPersons: !doesShow})
+    }
+
+    // Inside render method
+    let persons = null
+
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+            <Person
+                name={this.state.persons[0].name}
+                age={this.state.persons[0].age} />
+        </div>
+      )
+    }
+
+    return({persons})
+```
+
+### List an array
+
+```js
+{this.state.persons.map(person => {
+    return <Person 
+        name={person.name}
+        age={person.age} />
+})}
+``` 
