@@ -71,6 +71,10 @@ $ npm run build
 ### JSX conditionals
 
 ```js
+state = {
+    showPerson: false
+}
+
 {
     this.state.showPerson ?
     <div>
