@@ -104,6 +104,8 @@ togglePersonsHandler = () => {
 
     togglePersonsHandler = () => {
         const doesShow = this.state.showPersons
+        const doesShow = this.state.showPersons
+        const doesShow = this.state.showPersons
         this.setState({showPersons: !doesShow})
     }
 
@@ -123,12 +125,26 @@ togglePersonsHandler = () => {
     return({persons})
 ```
 
-### List an array
+### Lists and keys
+
+React needs a key prop when a component is rendered as a list in order to keep track of the elements it needs to change, rather than the whole list.
 
 ```js
-{this.state.persons.map(person => {
+state = {
+    persons: [
+        { id: 1, name: 'Max', age: 28 },
+        { id: 2, name: 'Manu', age: 29 },
+        { id: 3, name: 'Stephanie', age: 26 }
+    ]
+}
+
+// Inside render method
+{this.state.persons.map((person, index) => {
     return <Person 
+        click={this.deletePersonHandler.bind(this, index)}
         name={person.name}
-        age={person.age} />
+        age={person.age} 
+        key={person.id}/>
 })}
-``` 
+```
+
