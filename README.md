@@ -148,3 +148,22 @@ state = {
 })}
 ```
 
+### Updating arrays and objects
+
+/!\ When updating arrays and objects in the state, make sure to make a copy of them rather than just point at them, using the ES6 spread operator.
+
+Do this:
+```js
+const persons = [...this.state.persons]
+
+const person = {
+    ...this.state.persons[personIndex]
+}
+```
+
+Instead of this:
+```js
+const persons = this.state.persons
+
+const person = this.state.persons[personIndex]
+```
