@@ -72,7 +72,7 @@ $ npm run build
 
 <span style='color:firebrick; font-weight:bold;'>/!\\</span> This is not the most efficient solution
 
-```js
+```jsx
 state = {
     showPerson: false
 }
@@ -97,7 +97,7 @@ togglePersonsHandler = () => {
 
 <span style='color:firebrick; font-weight:bold;'>/!\\</span> This is the recommended solution
 
-```js
+```jsx
     state = {
         showPerson: false
     }
@@ -129,7 +129,7 @@ togglePersonsHandler = () => {
 
 React needs a key prop when a component is rendered as a list in order to keep track of the elements it needs to change, rather than the whole list.
 
-```js
+```jsx
 state = {
     persons: [
         { id: 1, name: 'Max', age: 28 },
@@ -153,7 +153,7 @@ state = {
 <span style='color:firebrick; font-weight:bold;'>/!\\</span> When updating arrays and objects in the state, make sure to make a copy of them rather than just point at them, using the ES6 spread operator.
 
 Do this:
-```js
+```jsx
 const persons = [...this.state.persons]
 
 const person = {
@@ -162,7 +162,7 @@ const person = {
 ```
 
 Instead of this:
-```js
+```jsx
 const persons = this.state.persons
 
 const person = this.state.persons[personIndex]
@@ -177,19 +177,19 @@ $ npm install --save radium
 ```
 
 Import radium
-```js
+```jsx
 import Radium from 'radium'
 ```
 
 Wrap the component with radium
-```js
+```jsx
 export default Radium(App)
 ```
 
 <span style='color:firebrick; font-weight:bold;'>/!\\</span> If using media queries, you need to wrap your App with the StyleRoot component
 
 Import StyleRoot
-```js
+```jsx
 import Radium, {StyleRoot} from 'radium'
 ```
 Wrap your App with StyleRoot
