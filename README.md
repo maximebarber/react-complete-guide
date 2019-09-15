@@ -167,3 +167,21 @@ const persons = this.state.persons
 
 const person = this.state.persons[personIndex]
 ```
+
+## Styling react components and elements
+
+### Using pseudo selectors and media queries in inline stlying
+
+```
+$ npm install --save radium
+```
+
+Import radium
+```js
+import Radium from 'radium'
+```
+
+Wrap the component with radium
+```js
+export default Radium(App)
+```

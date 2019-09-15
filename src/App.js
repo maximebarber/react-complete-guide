@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
+import Radium from 'radium';
 
 class App extends Component {
   state = {
@@ -50,7 +51,11 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'mediumseagreen',
+        color: 'black'
+      }
     };
 
     let persons = null
@@ -70,6 +75,10 @@ class App extends Component {
       )
 
       style.backgroundColor = 'firebrick'
+      style[':hover'] = {
+        backgroundColor: 'crimson',
+        color: 'black'
+      }
     }
 
     let classes = []
