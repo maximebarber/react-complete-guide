@@ -196,9 +196,9 @@ Wrap your App with StyleRoot
 ```jsx
 return (
     <StyleRoot>
-    <div className="App">
-        <h1>Hi, I'm a React App</h1>
-    </div>
+        <div className="App">
+            <h1>Hi, I'm a React App</h1>
+        </div>
     </StyleRoot>
 );
 ```
