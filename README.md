@@ -193,7 +193,7 @@ Import StyleRoot
 import Radium, {StyleRoot} from 'radium'
 ```
 Wrap your App with StyleRoot
-```js
+```jsx
 return (
     <StyleRoot>
     <div className="App">
