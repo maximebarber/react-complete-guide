@@ -70,7 +70,7 @@ $ npm run build
 
 ### JSX conditionals
 
-/!\ This is not the most efficient solution
+<span style='color:firebrick; font-weight:bold;'>/!\\</span> This is not the most efficient solution
 
 ```js
 state = {
@@ -95,7 +95,7 @@ togglePersonsHandler = () => {
 
 ### JS conditionals
 
-/!\ This is the recommended solution
+<span style='color:firebrick; font-weight:bold;'>/!\\</span> This is the recommended solution
 
 ```js
     state = {
@@ -150,7 +150,7 @@ state = {
 
 ### Updating arrays and objects
 
-/!\ When updating arrays and objects in the state, make sure to make a copy of them rather than just point at them, using the ES6 spread operator.
+<span style='color:firebrick; font-weight:bold;'>/!\\</span> When updating arrays and objects in the state, make sure to make a copy of them rather than just point at them, using the ES6 spread operator.
 
 Do this:
 ```js
@@ -184,4 +184,21 @@ import Radium from 'radium'
 Wrap the component with radium
 ```js
 export default Radium(App)
+```
+
+<span style='color:firebrick; font-weight:bold;'>/!\\</span> If using media queries, you need to wrap your App with the StyleRoot component
+
+Import StyleRoot
+```js
+import Radium, {StyleRoot} from 'radium'
+```
+Wrap your App with StyleRoot
+```js
+return (
+    <StyleRoot>
+    <div className="App">
+        <h1>Hi, I'm a React App</h1>
+    </div>
+    </StyleRoot>
+);
 ```
