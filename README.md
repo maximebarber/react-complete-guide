@@ -202,3 +202,9 @@ return (
     </StyleRoot>
 );
 ```
+
+### Adding a CSS Modules Stylesheet
+
+CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Learn more about CSS Modules here.
+
+[Create react app documentation](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
