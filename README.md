@@ -208,3 +208,54 @@ return (
 CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Learn more about CSS Modules here.
 
 [Create react app documentation](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
+
+## Debugging React apps
+
+### Error handling with error boudaries
+
+[Official documentation](https://reactjs.org/docs/error-boundaries.html)
+
+Create an ErrorBoudary component
+
+```js
+import React, { Component } from 'react'
+
+class ErrorBoundary extends Component {
+    state = {
+        hasError: false,
+        errorMessage: '',
+    }
+
+    componentDidCatch = (error, info) => {
+        this.setState({
+            hasError: true,
+            errorMessage: error,
+        })
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <h1>this.state.errorMessage</h1>
+            )
+        } else {
+            return this.props.children
+        }
+    }
+}
+
+export default ErrorBoundary
+```
+
+Wrap your component with the newly created ErrorBoundary component
+```js
+return (
+    <ErrorBoundary key={person.id}>
+    <Person 
+        click={this.deletePersonHandler.bind(this, index)}
+        name={person.name}
+        age={person.age} 
+        changed={(event) => this.nameChangedHandler(event, person.id)} />
+    </ErrorBoundary>
+)
+``` 
