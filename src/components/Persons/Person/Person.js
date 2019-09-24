@@ -8,6 +8,7 @@ const person = ( props ) => {
     if (randomNumber > 0.5) {
         throw new Error('Oops, looks like something went wrong!')
     } */
+    console.log('[Person.js] rendering')
 
     return (
         <div className={classes.Person}>

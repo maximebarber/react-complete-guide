@@ -2,32 +2,3 @@
   text-align: center;
 }
 
-.red {
-  color: firebrick;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.App button {
-  border: 1px solid darkgreen;
-  background-color: seagreen;
-  padding: 16px;
-  font: inherit;
-  color: white;
-  cursor: pointer;
-}
-
-.App button:hover {
-  background-color: mediumseagreen;
-}
-
-.App button.red {
-  border: 1px solid darkred;
-  background-color: firebrick;
-}
-
-.App button.red:hover {
-  background-color: crimson;
-}

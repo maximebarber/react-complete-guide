@@ -251,11 +251,52 @@ Wrap your component with the newly created ErrorBoundary component
 ```js
 return (
     <ErrorBoundary key={person.id}>
-    <Person 
-        click={this.deletePersonHandler.bind(this, index)}
-        name={person.name}
-        age={person.age} 
-        changed={(event) => this.nameChangedHandler(event, person.id)} />
+        <Person 
+            click={this.deletePersonHandler.bind(this, index)}
+            name={person.name}
+            age={person.age} 
+            changed={(event) => this.nameChangedHandler(event, person.id)} />
     </ErrorBoundary>
 )
 ``` 
+
+## Diving deeper
+
+### Optimization
+
+/!\ Only use when component updates conditionnaly, otherwise code will be executed for no reason.
+
+#### In functionnal components
+
+Using **react memo** will disable re-render in a fonctionnal component if it does not update.
+
+To use, wrap the export:
+
+```js
+export default React.memo(cockpit)
+```
+
+#### In class based component
+
+Using the **shouldComponentUpdate** method will check if React needs to re-render the component depending on changes in **some** of the props or the state.
+
+```js
+shouldComponentUpdate(nextProps, nextState) {
+    console.log([Persons.js] shouldComponentUpdate)
+    if (nextProps.persons !== this.props.persons) {
+        return true
+    } else {
+        return false
+    }
+}
+```
+
+If you need to check for changes in **all** props then instead of using the *shouldComponentUpdate* method you can extend **PureComponent** instead of *Component*. PureComponent will only re-render if there are changes in one of the props.
+
+```js
+import React, {PureComponent} from 'react'
+
+class Persons extends PureComponent {
+    // ...
+}
+```
