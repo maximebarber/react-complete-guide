@@ -1,14 +1,14 @@
-# React cheat sheet
+### React cheat sheet
 
-## Next generation javascript
+# Next generation javascript
 
 [Next generation JS summary](https://github.com/maximebarber/react-complete-guide/blob/master/docs/next-gen-js-summary.pdf)
 
 [JS array functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
-## Base features and syntax
+# Base features and syntax
 
-### Using Create React App
+## Using Create React App
 
 1. Install node.js
 
@@ -44,31 +44,31 @@ Go to http://localhost:3000/
 $ npm run build
 ```
 
-### Creating components
+## Creating components
 
 [Components & JSX Cheat Sheet](https://github.com/maximebarber/react-complete-guide/blob/master/docs/components.pdf)
 
-### Understanding and using *props* and *state*
+## Understanding and using *props* and *state*
 
 * **state property** is only available if inside a class that *extends Component*; unless using react hooks
 * If state changes, it will re-render the DOM
 
 [Props and state](https://github.com/maximebarber/react-complete-guide/blob/master/docs/props-state.pdf)
 
-### Handling events
+## Handling events
 
 [Supported events](https://reactjs.org/docs/events.html#supported-events)
 
-### Hook state manipulation vs class state manipulation
+## Hook state manipulation vs class state manipulation
 
 * [Hook version](https://github.com/maximebarber/react-complete-guide/blob/master/code/use-state-hook)
 * [Class version](https://github.com/maximebarber/react-complete-guide/blob/master/code/class-based)
 
 [Hook useState() learning card](https://github.com/maximebarber/react-complete-guide/blob/master/docs/usestate-learning-card.pdf)
 
-## Lists and conditionals
+# Lists and conditionals
 
-### JSX conditionals
+## JSX conditionals
 
 <span style='color:firebrick; font-weight:bold;'>/!\\</span> This is not the most efficient solution
 
@@ -93,7 +93,7 @@ togglePersonsHandler = () => {
 }
 ```
 
-### JS conditionals
+## JS conditionals
 
 <span style='color:firebrick; font-weight:bold;'>/!\\</span> This is the recommended solution
 
@@ -125,7 +125,7 @@ togglePersonsHandler = () => {
     return({persons})
 ```
 
-### Lists and keys
+## Lists and keys
 
 React needs a key prop when a component is rendered as a list in order to keep track of the elements it needs to change, rather than the whole list.
 
@@ -148,7 +148,7 @@ state = {
 })}
 ```
 
-### Updating arrays and objects
+## Updating arrays and objects
 
 <span style='color:firebrick; font-weight:bold;'>/!\\</span> When updating arrays and objects in the state, make sure to make a copy of them rather than just point at them, using the ES6 spread operator.
 
@@ -168,9 +168,9 @@ const persons = this.state.persons
 const person = this.state.persons[personIndex]
 ```
 
-## Styling react components and elements
+# Styling react components and elements
 
-### Using pseudo selectors and media queries in inline stlying
+## Using pseudo selectors and media queries in inline stlying
 
 ```
 $ npm install --save radium
@@ -203,15 +203,15 @@ return (
 );
 ```
 
-### Adding a CSS Modules Stylesheet
+## Adding a CSS Modules Stylesheet
 
 CSS Modules let you use the same CSS class name in different files without worrying about naming clashes. Learn more about CSS Modules here.
 
 [Create react app documentation](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
 
-## Debugging React apps
+# Debugging React apps
 
-### Error handling with error boudaries
+## Error handling with error boudaries
 
 [Official documentation](https://reactjs.org/docs/error-boundaries.html)
 
@@ -260,13 +260,13 @@ return (
 )
 ``` 
 
-## Diving deeper
+# Diving deeper
 
-### Optimization
+## Optimization
 
 /!\ Only use when component updates conditionnaly, otherwise code will be executed for no reason.
 
-#### In functionnal components
+### In functionnal components
 
 Using **react memo** will disable re-render in a fonctionnal component if it does not update.
 
@@ -276,7 +276,7 @@ To use, wrap the export:
 export default React.memo(cockpit)
 ```
 
-#### In class based component
+### In class based component
 
 Using the **shouldComponentUpdate** method will check if React needs to re-render the component depending on changes in **some** of the props or the state.
 
