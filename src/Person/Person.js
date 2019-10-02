@@ -1,6 +1,6 @@
 import React from 'react';
 
-import lol from './Person.module.css';
+import lol from './person.module.css';
 
 const person = ( props ) => {
     return (
